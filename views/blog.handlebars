@@ -1,0 +1,49 @@
+
+
+
+<div class="container mt-5"> 
+  <div class="card">
+    <div class="card-body bg-light">
+      <!-- Header section with user's name and creation date -->
+      <div class="header text-muted text-center mb-4">
+        <p>Created by {{user.name}} on {{format_date date_created}}</p>
+      </div>
+      <!-- Content section with title and description -->
+      <div class="content">
+        <h2 class="card-title text-center mb-4">{{name}}</h2>
+        <p class="card-text">{{description}}</p>
+      </div>
+      <!-- Comment section -->
+      <div class="comments mt-4">
+        <div class="comment-box mb-3">
+         
+          <input type="text" id="comment-input" class="form-control" placeholder="Write your comment here">
+          <!-- Button to submit a comment -->
+          <button class="btn btn-custom-color mt-3" id="comment-btn">Leave Comment</button>
+        </div>
+        <!-- Displaying comments -->
+        <div class="comment-list">
+          {{#each comments as |comment|}}
+          <div class="comment">
+           
+            <p class="text-muted">{{comment.description}}</p>
+          
+            <p class="fw-bold">{{comment.user.name}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row justify-content-start">
+    <div class="col-auto">
+      <a class="btn btn-custom-color" href="/profile">Back to Profile</a>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/comment.js"></script>

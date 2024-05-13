@@ -1,0 +1,18 @@
+<!-- Loop over each object in the blogs array -->
+<div class="container">
+  <div class="row justify-content-center py-2 mt-5">
+    {{#each blogs as |blog|}}
+    <div class="col-lg-6"> <!-- Each card takes half the width of the row -->
+      <div class="card mb-4 shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{{get_emoji}}} <a href="/blog/{{blog.id}}" class="card-link">{{blog.name}}</a>
+          </h5>
+          <p class="card-text">{{blog.description}}</p>
+          <p class="card-text"><small class="text-muted">Created by {{blog.user.name}} on {{format_date blog.date_created}}</small></p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
